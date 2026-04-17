@@ -214,12 +214,11 @@ p_i = f(r_i,; c_i,; q_i,; T_i^{-1})
   依赖场景，不宜常规高估
 ### 一个很好用的定义
 [
-p_i = c_1 \hat{acc}_i + c_2 \hat{zone}_i + c_3(1-\hat T_i)
+p_i = c_1 \hat{acc}_i + c_2 \hat{zone}_i
 ]
 其中：
 * (\hat{acc}_i)：动作控制精度评分
 * (\hat{zone}_i)：对关键区命中覆盖评分
-* (1-\hat T_i)：动作越短越不容易被防住
 
 
 
