@@ -46,12 +46,12 @@ J_i = m_{eq,i} v_i
 1. **末端线速度** (v_i)
 2. **等效打击质量** (m_{eq,i})
 3. **冲量** (J_i = m_{eq,i}v_i)
-4. **动能** (E_i=\frac12 m_{eq,i}v_i^2)
+4. **动作耗时** (T_i)
 5. **有效作用高度/命中关键区概率** (p_i)
 
 综合后可以定义攻击收益：
 [
-A_i = \alpha_1 \hat J_i + \alpha_2 \hat E_i + \alpha_3 \hat p_i
+A_i = \alpha_1 \hat J_i + \alpha_2 \hat p_i + \alpha_3 \(1-hat p_i)
 ]
 
 其中 (\hat{}) 表示归一化。
@@ -61,34 +61,17 @@ A_i = \alpha_1 \hat J_i + \alpha_2 \hat E_i + \alpha_3 \hat p_i
 ### B. 稳定性指标
 
 1. **质心水平偏移量** (\Delta x_i)
-2. **零力矩点到支撑边界最小距离** (d_i)
-3. **动作引起的角动量扰动** (L_i)
-4. **单腿支撑比例** (s_i)
-5. **恢复时间** (t_i^{rec})
+2. **角速度** (ω_i)
+3. **单腿支撑比例** (s_i)
 
 定义稳定风险：
 [
-R_i = \beta_1 \hat{\Delta x_i} + \beta_2(1-\hat d_i) + \beta_3 \hat L_i + \beta_4 \hat t_i^{rec}
+R_i = \beta_1 \hat{\Delta x_i} + \beta_2 \hat ω_i + \beta_3 \hat s_i}
 ]
 
 ---
 
-### C. 能耗指标
-
-动作越复杂、幅度越大、持续越久，能耗越高。
-可定义：
-[
-C_i = \int_0^{T_i}\sum_j \tau_j(t)\omega_j(t),dt
-]
-
-若没有详细轨迹，可近似成：
-[
-C_i \approx \sum_j \bar\tau_{ij}\bar\omega_{ij}T_i
-]
-
----
-
-### D. 实战适用性指标
+### C. 实修正项
 
 1. 动作耗时 (T_i)
 2. 连招可衔接性 (q_i)
@@ -96,9 +79,12 @@ C_i \approx \sum_j \bar\tau_{ij}\bar\omega_{ij}T_i
 
 定义：
 [
-U_i = \gamma_1(1-\hat T_i)+\gamma_2\hat q_i-\gamma_3\hat e_i
+Ui=γ1q^i−γ2e^i
 ]
 
+其中：
+qi：衔接性
+ei：失手暴露风险
 
 ## 8. 双目标优化模型怎么建
 
