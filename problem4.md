@@ -68,7 +68,7 @@ o_t=(\Delta \omega_t,\Delta a_t,\Delta T^{motor}_t,\Delta p^{foot}_t,n^{hit}_t,b
 H_t\in{\text{正常N},\text{轻故障L},\text{中故障M},\text{重故障S},\text{倒地D},\text{不可逆I}}
 ]
 
-然后用 BOCPD 实时更新“系统是否已经进入异常段”的后验概率：
+然后用 贝叶斯在线变点检测BOCPD 实时更新“系统是否已经进入异常段”的后验概率：
 
 [
 P(r_t \mid o_{1:t}),\qquad P(H_t \mid o_{1:t})
